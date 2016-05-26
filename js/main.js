@@ -78,25 +78,25 @@ jQuery(function($) {
 			thumbnail_navigation: 0,			// Thumbnail navigation
 			slides: [			// Slideshow Images
 				{
-					image: '_include/img/slider-images/smart.jpg',
+					image: 'img/slider-images/smart.jpg',
 					title: '<div class="slide-content"><div>OSRY Consulting</div><div class="sub-title">Smart Analysis</div></div>',
 					thumb: '',
 					url: ''
 				},
 				{
-					image: '_include/img/slider-images/focus.jpg',
+					image: 'img/slider-images/focus.jpg',
 					title: '<div class="slide-content"><div>OSRY Consulting</div><div class="sub-title">Simple Focus</div></div>',
 					thumb: '',
 					url: ''
 				},
 				{
-					image: '_include/img/slider-images/impact.jpg',
+					image: 'img/slider-images/impact.jpg',
 					title: '<div class="slide-content"><div>OSRY Consulting</div><div class="sub-title">Impactful Results</div></div>',
 					thumb: '',
 					url: ''
 				}
 				//{
-				//	image: '_include/img/slider-images/image04.jpg',
+				//	image: 'img/slider-images/image04.jpg',
 				//	title: '<div class="slide-content">OSRY Consulting</div>',
 				//	thumb: '',
 				//	url: ''
@@ -215,7 +215,7 @@ jQuery(function($) {
 
 			$.ajax({
 				type: "POST",
-				url: "_include/php/contact.php",
+				url: "php/contact.php",
 				data: fields,
 				dataType: 'json',
 				success: function(response) {
@@ -242,7 +242,7 @@ jQuery(function($) {
 		var valueTop = -64; // Margin Top Value
 
 		$("#ticker").tweet({
-			modpath: '_include/js/twitter/',
+			modpath: 'js/twitter/',
 			username: "Bluxart", // Change this with YOUR ID
 			page: 1,
 			avatar_size: 0,
@@ -427,7 +427,7 @@ jQuery(function($) {
 		Modernizr.load([
 			{
 				test: Modernizr.placeholder,
-				nope: '_include/js/placeholder.js',
+				nope: 'js/placeholder.js',
 				complete: function() {
 					//if (!Modernizr.placeholder) {
 					//	Placeholders.init({
