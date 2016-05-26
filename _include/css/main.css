@@ -12,6 +12,20 @@ Version: 1.0
    Basic Styles
 ================================================== */
 
+::-webkit-scrollbar-track {
+	background: #464646;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #DE5E60;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 10px;
+}
+
 html, body {
 	height: 100%;
 }
@@ -30,6 +44,9 @@ body{
 	font-size:16px;
 	font-family: 'Titillium Web', sans-serif;
 	line-height:28px;
+
+	scrollbar-face-color: #DE5E60;
+	scrollbar-track-color: #464646;
 }
 
 
@@ -650,7 +667,7 @@ nav#menu #menu-nav li a:hover {
 
 .page-alternate {
 	background: #26292E;
-	padding: 100px 0;
+	padding: 50px 0;
 	position: relative;
 	z-index: 99;
 }
@@ -722,7 +739,7 @@ nav#menu #menu-nav li a:hover {
 	position: relative;
 	overflow: hidden;
 	margin-bottom: 30px;
-	cursor: pointer;
+	cursor: default;
 }
 
 .item-thumbs a + img {
@@ -734,7 +751,7 @@ nav#menu #menu-nav li a:hover {
 	display: block;
 	width: 100%;
 	height: 100%;
-	
+	cursor: default;
 	opacity: 0;
 	filter: alpha(opacity=0);
 	
@@ -774,9 +791,8 @@ nav#menu #menu-nav li a:hover {
 	width: 100%;
 	height: 100%;
 	background: #DE5E60;
-	
-	opacity: 0.80;
-	filter: alpha(opacity=80);
+	opacity: 0.90;
+	filter: alpha(opacity=90);
 }
 
 .item-thumbs .hover-wrap .overlay-img-thumb {
@@ -810,17 +826,17 @@ nav#menu #menu-nav li a:hover {
 
 .item-thumbs .text-thumb {
 	position: absolute;
+	background-color: rgba(60,60,60,0.6);
 	width: 100%;
-	height: 32px;
 	top: 50%;
 	margin: -16px 0 0 0;
+	padding: 5px;
 	color: #FFFFFF;
-	font-size: 3em;
+	font-size: 2.7em;
 	font-weight: 300;
 	line-height: 1em;
 	text-transform: uppercase;
 	text-align: center;
-
 	visibility: visible;
 	opacity: 1;
 	filter: alpha(opacity=1000);
@@ -829,124 +845,31 @@ nav#menu #menu-nav li a:hover {
 	-webkit-transition: visibility 0.5s, opacity .5s ease-in-out;
 }
 
+.overlay-text-thumb {
+	scrollbar-face-color: #cf3835;
+	scrollbar-track-color: #FF9394;
+}
+
+.overlay-text-thumb::-webkit-scrollbar-track {
+	background: #FF9394;
+}
+
+.overlay-text-thumb::-webkit-scrollbar-thumb {
+	background: #cf3835;
+	border-radius: 10px;
+}
+
+.overlay-text-thumb::-webkit-scrollbar {
+	width: 8px;
+	height: 10px;
+}
 
 /* ==================================================
    About Section
 ================================================== */
 
-.profile-name {
-	margin-bottom: 15px;	
-}
 
-.profile-description {
-	margin-bottom: 25px;	
-}
 
-.image-wrap {
-	position: relative;
-	overflow: hidden;
-	margin-bottom: 25px;
-	cursor: pointer;
-}
-
-.image-wrap img {
-	width: 100%;	
-}
-
-.image-wrap  .hover-wrap {
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 100%;
-	
-	opacity: 0;
-	filter: alpha(opacity=0);
-	
-	-webkit-transition: all 450ms ease-out 0s;	
-	   -moz-transition: all 450ms ease-out 0s;
-		 -o-transition: all 450ms ease-out 0s;
-		    transition: all 450ms ease-out 0s;
-		  
-	-webkit-transform: rotateY(180deg) scale(0.5,0.5);
-	   -moz-transform: rotateY(180deg) scale(0.5,0.5);
-		-ms-transform: rotateY(180deg) scale(0.5,0.5);
-		 -o-transform: rotateY(180deg) scale(0.5,0.5);
-			transform: rotateY(180deg) scale(0.5,0.5);	
-}
-
-.image-wrap:hover .hover-wrap,
-.image-wrap.active .hover-wrap {
-	opacity: 1;
-	filter: alpha(opacity=100);
-	
-	-webkit-transform: rotateY(0deg) scale(1,1);
-	   -moz-transform: rotateY(0deg) scale(1,1);
-		-ms-transform: rotateY(0deg) scale(1,1);
-		 -o-transform: rotateY(0deg) scale(1,1);
-		    transform: rotateY(0deg) scale(1,1);
-}
-
-.image-wrap .hover-wrap .overlay-img {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: #DE5E60;
-	
-	opacity: 0.80;
-	filter: alpha(opacity=80);
-}
-
-.image-wrap .hover-wrap .overlay-text-thumb {
-	position: absolute;
-	width: 100%;
-	height: 32px;
-	top: 50%;
-	margin: -16px 0 0 0;
-	color: #FFFFFF;
-	font-size: 20px;
-	font-weight: 300;
-	line-height: 32px;
-	text-transform: uppercase;
-	text-align: center;
-	
-	opacity: 1;
-	filter: alpha(opacity=100);
-}
-
-.social-icons {
-	margin: 0;
-	padding: 0;
-}
-
-.social-icons li {
-	display: inline-block;
-	margin-left: 15px;	
-}
-
-.social-icons li:first-child {
-	margin-left: 0;
-}
-
-.social-icons li a{
-	color: #FFFFFF;
-	font-size: 16px;
-	line-height: 1em;
-	width: 16px;
-	height: 16px;
-	
-	opacity: 0.3;
-	filter: alpha(opacity=30);
-	
-	-webkit-transition: opacity 0.1s linear 0s;	
-	   -moz-transition: opacity 0.1s linear 0s;
-		 -o-transition: opacity 0.1s linear 0s;
-		    transition: opacity 0.1s linear 0s;
-}
-
-.social-icons li a:hover{
-	opacity: 1;
-	filter: alpha(opacity=100);
-}
 
 /* ==================================================
    Contact Section
@@ -1044,140 +967,6 @@ nav#menu #menu-nav li a:hover {
 #response {
 	margin-top: 20px;
 	color: #FFFFFF;
-}
-
-
-/* ==================================================
-   Twitter Feed
-================================================== */
-
-#twitter-feed {
-	padding: 100px 0 90px;
-	text-align: center;	
-}
-
-#twitter-feed .follow {
-	position: absolute;
-	bottom: 30px;
-	left: 50%;
-	margin-left: -8px;
-	font-size: 16px;	
-}
-
-#ticker .tweet_list {
-	margin: 0;
-	padding: 0;
-	height: 64px;
-	list-style: none;
-	overflow-y: hidden;	
-}
-
-#ticker .tweet_list li {
-	font-size: 18px;
-	height: 64px;
-	line-height: 28px;
-	overflow: hidden;
-}
-
-#ticker .tweet_list .tweet_time a {
-	color: #7f8289;
-	font-size: 14px;
-	font-style: italic;
-	margin-left: 10px;	
-}
-
-#ticker .tweet_list .tweet_time a:hover {
-	color: #FFFFFF;	
-}
-
-
-/* ==================================================
-   Social Area
-================================================== */
-
-#social-area {
-    text-align: center;
-}
-
-#social-area #social ul {
-	margin: 0;
-	padding: 0;
-}
-
-#social-area #social ul li {
-	display: inline-block;
-	margin-left: 30px;
-	list-style: none;
-	cursor: pointer;
-}
-
-#social-area #social ul li:first-child {
-	margin-left: 0;
-}
-
-#social ul li a {
-	display: block;
-	width: 70px;
-	height: 70px;
-
-	background: #26292E;
-	
-	-webkit-transition: all 400ms ease-out 0s;	
-	   -moz-transition: all 400ms ease-out 0s;
-		 -o-transition: all 400ms ease-out 0s;
-		    transition: all 400ms ease-out 0s;
-	
-	-webkit-transform: rotateY(180deg);
-	   -moz-transform: rotateY(180deg);
-		-ms-transform: rotateY(180deg);
-		 -o-transform: rotateY(180deg);
-			transform: rotateY(180deg);
-}
-
-#social ul li a span {
-	display: inline-block;
-	margin: 0;
-	color: #55606a;
-	font-size: 32px;
-	line-height: 70px;
-	
-	opacity: 0.3;
-	filter: alpha(opacity=30);
-	
-	-webkit-transition: all 400ms ease-out 0s;	
-	   -moz-transition: all 400ms ease-out 0s;
-		 -o-transition: all 400ms ease-out 0s;
-		    transition: all 400ms ease-out 0s;
-		  
-	-webkit-transform: rotateY(180deg);
-	   -moz-transform: rotateY(180deg);
-		-ms-transform: rotateY(180deg);
-		 -o-transform: rotateY(180deg);
-			transform: rotateY(180deg);
-}
-
-#social ul li:hover a,
-#social ul li.active a {
-	background-color: #DE5E60;	
-	
-	-webkit-transform: rotateY(0deg);
-	   -moz-transform: rotateY(0deg);
-		-ms-transform: rotateY(0deg);
-		 -o-transform: rotateY(0deg);
-		    transform: rotateY(0deg);
-}
-
-#social ul li:hover a span,
-#social ul li.active a span {
-	color: #FFFFFF;
-	opacity: 1;
-	filter: alpha(opacity=100);
-	
-	-webkit-transform: rotateY(0deg);
-	   -moz-transform: rotateY(0deg);
-		-ms-transform: rotateY(0deg);
-		 -o-transform: rotateY(0deg);
-			transform: rotateY(0deg);
 }
 
 /* ==================================================
