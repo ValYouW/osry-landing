@@ -215,9 +215,18 @@ jQuery(function($) {
 
 			$.ajax({
 				type: "POST",
-				url: "php/contact.php",
+				url: "http://osry.comxa.com/contact.php",
 				data: fields,
 				dataType: 'json',
+				dataFilter: function(data) {
+					// The webhosting is appending some text to responses, so we look for json end and trim
+					var end = data.indexOf('}');
+					if (end < 0) {
+						return data;
+					}
+
+					return data.substring(0, end + 1);
+				},
 				success: function(response) {
 
 					if (response.status) {
@@ -226,6 +235,9 @@ jQuery(function($) {
 					}
 
 					$('#response').empty().html(response.html);
+				},
+				error: function(err) {
+					$('#response').empty().html('Oops, something went wrong, please try again...');
 				}
 			});
 			return false;
